@@ -1,0 +1,36 @@
+<header>
+  <h1>Welcome</h1>
+</header>
+<container>
+  <h2>Here will be the body</h2>
+  <%= display_alert %>
+
+  <div class="signin-form">
+    <%= form_tag url: "/auth/identity/callback" do %>
+      <div class="field">
+        <%= label_tag :auth_key, t('.username') %>
+        <%= email_field_tag :auth_key, @user.try(:email), placeholder: t('.ph_username') %>
+      </div>
+      <div class="field">
+        <%= label_tag :password, t('.password') %>
+        <%= password_field_tag :password, nil, placeholder: t('.ph_password'), maxlength: 8 %>
+      </div>
+      <%= submit_tag t('.login') %>
+    <% end %>
+  </div>
+
+  <div class="signup">
+    <%= link_to t('.create_account'), new_user_path %>
+  </div>
+
+  <div class="login-buttons">
+    <%= link_to 'GooglePlus', "/auth/gplus", class: "zocial icon googleplus", style: "font-size: .8em;" %>
+    <%= link_to 'Facebook', "/auth/facebook", class: "zocial icon facebook", style: "font-size: .8em;" %>
+    <%= link_to 'Twitter', "/auth/twitter", class: "zocial icon twitter", style: "font-size: .8em;" %>
+    <%= link_to 'Github', "/auth/github", class: "zocial icon github", style: "font-size: .8em;" %>
+    <%= link_to 'LinkedIn', "/auth/linkedin", class: "zocial icon linkedin", style: "font-size: .8em;" %>
+  </div>
+</container>
+<footer>
+  <h2>This will be the footer</h2>
+</footer>

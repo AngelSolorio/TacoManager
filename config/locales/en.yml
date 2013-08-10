@@ -1,0 +1,34 @@
+en:
+  sessions:
+    new:
+      username: 'Username'
+      password: 'Password'
+      ph_username: 'Type your username'
+      ph_password: 'Type your password'
+      login: 'Log in'
+      create_account: 'create account'
+    create:
+      signed_in: 'Signed in'
+    destroy:
+      signed_out: 'Signed out'
+
+  home:
+    index:
+      welcome: 'Welcome, %{user}!'
+      submit: 'Submit'
+      username: 'Username:'
+      password: 'Password:'
+      p_usernam: 'Type your username'
+      p_password: 'type your password'
+
+  users:
+    new:
+      name: 'Name: '
+      email: 'Email: '
+      paswword: 'Password: '
+      confirmation: 'Password confirmation: '
+      register: 'Register'
+      ph_name: 'Type your name here'
+      ph_email: 'Type your email here'
+      ph_password: 'Type your password'
+      ph_confirmation: 'Type again your password here'

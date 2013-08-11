@@ -1,5 +1,5 @@
 module ApplicationHelper
-   def display_user_logged_tag
+  def display_user_logged_tag
     content_tag :div, class: 'user-logged' do
       t('.welcome', user: current_user.try(:name))
     end

@@ -16,6 +16,6 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    redirect_to root_path, alert: t('.not_logged') unless user_logged?
+    redirect_to signin_path, alert: t('.not_logged') unless user_logged?
   end
 end

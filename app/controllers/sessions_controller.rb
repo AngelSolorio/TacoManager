@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 
   def destroy
     warden.logout(:user)
-    redirect_to root_url, notice: t('.signed_out')
+    redirect_to signin_path, notice: t('.signed_out')
   end
 
   def failure
-    redirect_to root_url, alert: "Authentication failed, please try again."
+    redirect_to signin_path, alert: "Authentication failed, please try again."
   end
 end

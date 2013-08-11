@@ -2,15 +2,22 @@
 <%= display_notice %>
 
 <div class="signup-form">
-  <%= form_tag @user, url: "/auth/user/register"  do %>
+  <%= form_tag "/auth/identity/register" do %>
+    <%= "USER => #{@user.inspect}" %>
     <% if @user && @user.errors.any? %>
-      <%= "There were errors!" %>
+     <div class="error_messages">
+        <h2><%= pluralize(@user.errors.count, "error") %>:</h2>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     <% end %>
     <div class="field">
       <%= label_tag :name, t('.name') %>
       <%= text_field_tag :name, @user.try(:name), placeholder: t('.ph_name') %>
       <%= field_error @user, :name %>
-      <%= "USER => #{@user.inspect}" %>
     </div>
     <div class="field">
       <%= label_tag :email, t('.email') %>
@@ -20,11 +27,12 @@
     <div class="field">
       <%= label_tag :password, t('.password') %>
       <%= password_field_tag :password, nil, placeholder: t('.ph_password') %>
+      <%= field_error @user, :password %>
     </div>
     <div class="field">
       <%= label_tag :password_confirmation, t('.confirmation') %>
       <%= password_field_tag :password_confirmation, nil, placeholder: t('.ph_confirmation') %>
-      <%= field_error @user, :password %>
+      <%= field_error @user, :password_confirmation %>
     </div>
     <%= submit_tag t('.register') %>
   <% end %>

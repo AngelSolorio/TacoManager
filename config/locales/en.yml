@@ -20,12 +20,13 @@ en:
       password: 'Password:'
       p_usernam: 'Type your username'
       p_password: 'type your password'
+      not_logged: 'Please login to access'
 
   users:
     new:
       name: 'Name: '
       email: 'Email: '
-      paswword: 'Password: '
+      password: 'Password: '
       confirmation: 'Password confirmation: '
       register: 'Register'
       ph_name: 'Type your name here'

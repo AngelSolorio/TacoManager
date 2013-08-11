@@ -1,14 +1,12 @@
-class User < ActiveRecord::Base #OmniAuth::Identity::Models::ActiveRecord
-  #has_secure_password validations: true
-
-  validates :uid, :provider, :name, presence: true
+class User < ActiveRecord::Base
+  validates :provider, :name, presence: true
+  validates_uniqueness_of :email, unless: 'email.nil?'
   validates_format_of :email, with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, unless: 'email.nil?'
 
-  #validates :password, length: { minimum: 4, maximun: 8 }, if: -> r { r.password.present? }
-  #validates :password_confirmation, presence: true, if: -> r { r.password.present? }
-
   def self.from_omniauth(auth)
-    find_by_provider_and_uid(auth['provider'], auth['uid']) || create_with_omniauth(auth)
+    find_by_provider_and_uid(auth['provider'], auth['uid']) ||
+    (find_by_email(auth['info']['email']) if !auth['info']['email'].nil?) ||
+    create_with_omniauth(auth)
   end
 
   def self.create_with_omniauth(auth)
@@ -17,7 +15,10 @@ class User < ActiveRecord::Base #OmniAuth::Identity::Models::ActiveRecord
       user.uid = auth['uid']
       user.name = auth['info']['name']
       user.email = auth['info']['email']
-      Rails.logger.debug "****************** AUTH => #{user.inspect}"
+      if user.provider != 'identity'
+        user.password = rand(36**10).to_s(36)
+        user.password_confirmation = user.password
+      end
     end
   end
 end

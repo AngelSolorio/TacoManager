@@ -1,11 +1,12 @@
 TacoManager::Application.routes.draw do
   root to: 'home#index'
-  resources :users
 
-  get 'signin' => 'sessions#new'
-  get 'auth/:provider/callback' => 'sessions#create'
+  match 'auth/:provider/callback' => 'sessions#create', via: [:get, :post]
+  match 'signin' => 'sessions#new', via: [:get, :post], as: :signin
+  get 'signup' => 'users#new', as: :signup
   get "signout" => "sessions#destroy", as: :signout
-  get '/auth/failure', to: redirect('/')
+
+  resources :users
 
   if Rails.env.test?
     post '/sessions/create' => 'sessions#create'

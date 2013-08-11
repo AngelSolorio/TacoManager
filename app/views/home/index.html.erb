@@ -2,16 +2,9 @@
   <h1>Header</h1>
 </header>
 <container>
-  <%= display_alert %>
-  <%= display_notice %>
-  <%= display_warden_message_tag %>
-  <h2>Here will be the body</h2>
   <%= display_user_logged_tag %>
-  <div class="login-buttons">
-    <%= link_to 'Github', "/auth/github", class: "zocial icon github" %>
-    <%= link_to 'Facebook', "/auth/facebook", class: "zocial icon facebook" %>
-    <%= link_to 'Twitter', "/auth/twitter", class: "zocial icon twitter" %>
-  </div>
+  <%= link_to t('.signout'), signout_path, class: "signout-link"%>
+  <h2>Here will be the body</h2>
 </container>
 <footer>
   <h2>This will be the footer</h2>

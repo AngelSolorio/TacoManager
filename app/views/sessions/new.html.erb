@@ -4,9 +4,19 @@
 <container>
   <h2>Here will be the body</h2>
   <%= display_alert %>
+  <%= display_warden_message_tag %>
 
   <div class="signin-form">
-    <%= form_tag url: "/auth/identity/callback" do %>
+    <%= form_tag "/auth/identity/callback" do |f| %>
+      <% if @user && @user.errors.any? %>
+       <div class="error_messages">
+          <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
       <div class="field">
         <%= label_tag :auth_key, t('.username') %>
         <%= email_field_tag :auth_key, @user.try(:email), placeholder: t('.ph_username') %>

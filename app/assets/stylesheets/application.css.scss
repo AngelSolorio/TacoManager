@@ -1,0 +1,189 @@
+@import "bourbon";
+@import "variables";
+@import "sessions";
+@import "home";
+@import "zocial";
+
+section, div, article { overflow: hidden; }
+
+body { margin: 0; }
+
+.container {
+  width: grid-width(12);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.main-header {
+  height: 80px;
+  width: 100%;
+  background-image:url('background.jpg');
+
+  #circles {
+    width: 113px;
+    height: 30px;
+    background:url('circles.jpg');
+    @include transform(rotate(180deg));
+    margin-left: $margin;
+    margin-top: $margin * 2.5;
+    position: absolute;
+  }
+
+  #logo-header {
+    width: 927px;
+    height: 443px;
+    background: url("flannel.png");
+    position: absolute;
+    margin-left: $margin * 4;
+  }
+
+  #menu {
+    list-style-type: none;
+    margin: ($margin * 2) $margin ($margin) ($margin * 2);
+    float: right;
+
+    li {
+      height: 40px;
+      float: left;
+
+      &:after {
+        content: '|';
+        margin-left: $margin;
+        color: $marron;
+      }
+
+      &:last-child:after {content: '';}
+
+      &:hover {
+        background: $marron;
+        a { color: $dark-yellow; }
+      }
+
+      a {
+        color: $marron;
+        font-weight: bold;
+        font-size: 1.2em;
+        text-decoration: none;
+        margin-left: $margin;
+      }
+    }
+  }
+}
+
+.main-footer {
+  @extend .inner-shadow-top;
+  height: 200px;
+  width: 100%;
+  background-image:url('background.jpg');
+  margin-top: $margin;
+
+  #circles {
+    width: 113px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    background:url('circles.jpg');
+  }
+
+  #legend {
+    float: left;
+    color: $marron;
+    margin-top: $margin / 4;
+    margin-left: $margin * 2;
+    text-shadow: 0 1px $gray;
+  }
+}
+
+.inner-shadow-top {
+  -moz-box-shadow:    inset 0 7px 15px -5px $transparent-marron;
+  -webkit-box-shadow: inset 0 7px 15px -5px $transparent-marron;
+  box-shadow:         inset 0 7px 15px -5px $transparent-marron;
+}
+
+.shine-bottom {
+  -moz-box-shadow:    0 7px 7px -1px #FDF7F7;
+  -webkit-box-shadow: 0 7px 7px -1px #FDF7F7;
+  box-shadow:         0 7px 7px -1px #FDF7F7;
+}
+
+.shadow-bottom {
+  -moz-box-shadow:    1px 3px 5px -1px $light-gray;
+  -webkit-box-shadow: 1px 3px 5px -1px $light-gray;
+  box-shadow:         1px 3px 5px -1px $light-gray;
+}
+
+.box-shadow {
+  -moz-box-shadow:    3px 3px 5px -2px $light-gray;
+  -webkit-box-shadow: 3px 3px 5px -2px $light-gray;
+  box-shadow:         3px 3px 5px -2px $light-gray;
+  border: 1px solid $light-gray;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: white;
+}
+
+.form {
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    font-size: .8em;
+    padding: 5px;
+    text-shadow: 0px 1px 0px #fff;
+    outline: none;
+    -moz-box-shadow: inset 0 0 3px $marron;
+    -webkit-box-shadow: inset 0 0 3px $marron;
+    box-shadow: inset 0 0 3px $marron;
+    background: -webkit-gradient(linear, left top, left bottombottom, from(#bcbcbe), to(#ffffff));
+    background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid $dark-yellow;
+    margin-right: ($margin / 2);
+    margin-bottom: 7px;
+  }
+
+  input:focus, textarea:focus {
+    -webkit-box-shadow: 0px 0px 8px $marron;
+    -moz-box-shadow: 0px 0px 8px $marron;
+    box-shadow: 0px 0px 8px $marron;
+  }
+
+  textarea {
+    font-size: .9em;
+    @include size(400px 150px);
+  }
+
+  label {
+    line-height: 2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: $gray;
+  }
+
+/*
+  div 				{
+    margin-left: 0 !important;
+    margin-top: $margin;
+
+    .field_with_errors {
+      margin: 0;
+      display: inline-block;
+      float: left;
+
+      input, textarea { border: 1px solid $red; }
+
+      .date {
+        float:left;
+        margin: 0 ($margin / 2) 0 0 !important;
+      }
+    }
+
+    .error {
+      font-size: .7em;
+      color: $red;
+      float: left;
+      margin: ($margin / 4) ($margin / 4) ($margin / 4) 0;
+    }
+  }
+*/
+}

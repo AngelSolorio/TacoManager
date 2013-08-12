@@ -1,0 +1,9 @@
+.main-header {
+  #logo-header {
+    width: 440px;
+    height: 126px;
+    background: url("mini-logo.png") no-repeat !important;
+    position: absolute;
+    margin-left: $margin * 4;
+  }
+}

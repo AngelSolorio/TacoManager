@@ -1,0 +1,53 @@
+#big-taco {
+  width: 498px;
+  height: 364px;
+  margin-top: $margin * 4;
+  float: left;
+}
+
+#signin-form {
+  margin-top: $margin * 9;
+  margin-left: $margin * 7.5;
+  display: inline-table;
+  position: absolute;
+
+  form {
+    display: inline-block;
+    margin-bottom: $margin * 3.5;
+
+    #login-button {
+      float: right;
+      margin-right: $margin / 2;
+
+      input[type="submit"] {
+        @extend .small_button;
+      }
+    }
+  }
+
+  #signup-link {
+    margin-bottom: $margin / 2;
+
+    a {
+      color: brown;
+      text-decoration: none;
+    }
+  }
+
+  #login-social-buttons {
+    a {
+      margin: 5px;
+    }
+  }
+}
+
+@mixin awesome_button($color, $margin, $padding){
+  @include button(shiny, $color);
+  margin: $margin;
+  padding: $padding;
+}
+
+.small_button {
+  @include awesome_button($dark-yellow, 4px, 5px 15px);
+  font-size: .8em;
+}

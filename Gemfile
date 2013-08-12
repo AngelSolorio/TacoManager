@@ -5,6 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 gem 'pg'
 gem 'puma'
+
 gem 'warden'
 gem 'omniauth-identity'
 gem 'omniauth-github'
@@ -12,17 +13,20 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-gplus'
 gem 'omniauth-linkedin'
+
 gem 'mail'
 gem 'gravatar_image_tag'
 gem 'geocoder'
 gem 'pretty_formatter'
-gem 'font-awesome-sass-rails'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-group :production do
+# Gems used only for assets and not required in production environments by default.
+group :assets do
   gem 'sass-rails', '~> 4.0.0'
-  gem 'uglifier', '>= 1.3.0'
   gem 'coffee-rails', '~> 4.0.0'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'bourbon'
+  gem 'font-awesome-sass-rails'
 end
 
 group :development, :test do

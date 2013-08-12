@@ -1,4 +1,10 @@
 en:
+  layouts:
+    application:
+      menu_profile: 'Profile'
+      menu_establishments: 'Establishments'
+      menu_orders: 'Orders'
+
   sessions:
     new:
       username: 'Username'
@@ -6,7 +12,8 @@ en:
       ph_username: 'Type your username'
       ph_password: 'Type your password'
       login: 'Log in'
-      create_account: 'create account'
+      create_account: 'Create a new account'
+      social_buttons: ' or sign in with:'
     create:
       signed_in: 'Signed in'
     destroy:

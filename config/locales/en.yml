@@ -21,6 +21,7 @@ en:
 
   home:
     index:
+      signout: 'Signout'
       welcome: 'Welcome, %{user}!'
       submit: 'Submit'
       username: 'Username:'

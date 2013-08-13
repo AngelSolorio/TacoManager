@@ -42,3 +42,13 @@
     <%= link_to 'LinkedIn', "/auth/linkedin", class: "zocial icon linkedin", style: "font-size: .8em;" %>
   </div>
 </section>
+
+<script type="text/javascript">
+  document.addEventListener('page:load', function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+
+  $(function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+</script>

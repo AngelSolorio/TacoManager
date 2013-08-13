@@ -1,0 +1,17 @@
+establishment_1:
+  name: "Tacos El Gordo"
+  address: "Ave. Camino Real 236, Colima, Mexico"
+  latitude: 19.246992
+  longitude: -103.707781
+  phone: "312-1234567"
+  schedule: "De 19:00 a 03:00 hrs"
+  points: 5
+
+establishment_2:
+  name: "Tacos Los Orientales"
+  address: "Ave. San Fernando 427, Colima, Mexico"
+  latitude: 19.251049
+  longitude: -103.720836
+  phone: "312-7654321"
+  schedule: "De 10:00 a 11:00 hrs"
+  points: 0

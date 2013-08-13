@@ -1,16 +1,15 @@
-# Read about fixtures at
-# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+user_1:
+  name: "Test user"
+  email: "user@test.com"
+  password_digest: "$2a$10$uaAIvMF5xX2NNtJ10w/BkubKZh12fEIGQyT.20lp4TYSCU1pGISkW"
+  active: true
+  provider: "identity"
+  uid: "12345"
 
-one:
-  name: MyString
-  email: MyString
+user_2:
+  name: "Test user 2"
+  email: "user2@test.com"
+  password_digest: "$2a$10$IBlJrgpxu9OeWTx//mow.e4FupwgBb6J4Y/1VeuiQrc4QQR9jS2Vi"
   active: false
-  provider: MyString
-  uid: MyString
-
-two:
-  name: MyString
-  email: MyString
-  active: false
-  provider: MyString
-  uid: MyString
+  provider: "identity"
+  uid: "54321"

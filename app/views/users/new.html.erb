@@ -1,9 +1,9 @@
 <%= display_alert %>
 <%= display_notice %>
 
-<div class="signup-form">
+<section id="signup-form">
+  <h1><%= t('.new_user') %></h1>
   <%= form_tag "/auth/identity/register" do %>
-    <%= "USER => #{@user.inspect}" %>
     <% if @user && @user.errors.any? %>
      <div class="error_messages">
         <h2><%= pluralize(@user.errors.count, "error") %>:</h2>
@@ -34,6 +34,18 @@
       <%= password_field_tag :password_confirmation, nil, placeholder: t('.ph_confirmation') %>
       <%= field_error @user, :password_confirmation %>
     </div>
-    <%= submit_tag t('.register') %>
+    <div id="signup-button">
+      <%= submit_tag t('.register') %>
+    </div>
   <% end %>
-</div>
+</section>
+
+<script type="text/javascript">
+  document.addEventListener('page:load', function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+
+  $(function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+</script>

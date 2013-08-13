@@ -11,6 +11,7 @@ $black: #2b2b2b;
 $gray: #6E6D6C;
 $light-red: #DD5B4A;
 $light-gray: #A6A7A6;
+$light-black: #4c4c4c;
 $light-yellow: #E0C24A;
 $dark-yellow: #ffca41;
 $transparent-marron: rgba(187, 84, 84, 0.75);
@@ -20,3 +21,6 @@ $transparent-green: rgba(36,134,48,0.250);
 $header1-color: #494949;
 $text-color: #959595;
 $text-size: 14px;
+
+@include font-face(Merienda, 'merienda-regular', $asset-pipeline: true);
+@include font-face(Merienda, 'merienda-bold', bold, $asset-pipeline: true);

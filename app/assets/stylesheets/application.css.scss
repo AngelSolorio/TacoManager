@@ -2,6 +2,7 @@
 @import "variables";
 @import "sessions";
 @import "home";
+@import "users";
 @import "zocial";
 
 section, div, article { overflow: hidden; }
@@ -17,7 +18,7 @@ body { margin: 0; }
 .big-logo-header {
   width: 927px;
   height: 443px;
-  background: url("flannel.png");
+  background: url("flannel.png") no-repeat;
   position: absolute;
   margin-left: $margin * 4;
 }
@@ -28,6 +29,15 @@ body { margin: 0; }
   background: url("mini-logo.png") no-repeat;
   position: absolute;
   margin-left: $margin * 4;
+}
+
+.logo-footer {
+  width: 235px;
+  height: 105px;
+  float: right;
+  position: relative;
+  z-index: 800;
+  background: url("foot-logo.png") no-repeat;
 }
 
 .main-header {
@@ -80,12 +90,13 @@ body { margin: 0; }
 
 .main-footer {
   @extend .inner-shadow-top;
-  height: 200px;
+  height: 400px;
   width: 100%;
   background-image:url('background.jpg');
   margin-top: $margin;
 
   #circles {
+    @extend .inner-shadow-top;
     width: 113px;
     height: 30px;
     display: inline-block;
@@ -96,9 +107,10 @@ body { margin: 0; }
   #legend {
     float: left;
     color: $marron;
-    margin-top: $margin / 4;
-    margin-left: $margin * 2;
+    margin: ($margin / 4) 0 0 ($margin / 2);
     text-shadow: 0 1px $gray;
+    z-index: 900;
+    position: absolute;
   }
 }
 
@@ -129,6 +141,17 @@ body { margin: 0; }
   -moz-border-radius: 3px;
   border-radius: 3px;
   background-color: white;
+}
+
+@mixin awesome_button($color, $margin, $padding){
+  @include button(shiny, $color);
+  margin: $margin;
+  padding: $padding;
+}
+
+.small_button {
+  @include awesome_button($dark-yellow, 4px, 5px 15px);
+  font-size: .8em;
 }
 
 .form {
@@ -167,6 +190,7 @@ body { margin: 0; }
     font-weight: bold;
     color: $gray;
   }
+}
 
 /*
   div 				{
@@ -194,4 +218,3 @@ body { margin: 0; }
     }
   }
 */
-}

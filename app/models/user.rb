@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :comments
+  has_many :establishments, through: :comments
+  has_and_belongs_to_many :establishments
+
   validates :provider, :name, presence: true
   validates_uniqueness_of :email, unless: 'email.nil?'
   validates_format_of :email, with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, unless: 'email.nil?'
@@ -15,10 +19,6 @@ class User < ActiveRecord::Base
       user.uid = auth['uid']
       user.name = auth['info']['name']
       user.email = auth['info']['email']
-      if user.provider != 'identity'
-        user.password = rand(36**10).to_s(36)
-        user.password_confirmation = user.password
-      end
     end
   end
 end

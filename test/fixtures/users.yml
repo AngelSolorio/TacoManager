@@ -1,15 +1,17 @@
 user_1:
+  id: 100
   name: "Test user"
   email: "user@test.com"
   password_digest: "$2a$10$uaAIvMF5xX2NNtJ10w/BkubKZh12fEIGQyT.20lp4TYSCU1pGISkW"
   active: true
-  provider: "identity"
+  provider: "twitter"
   uid: "12345"
 
 user_2:
+  id: 101
   name: "Test user 2"
   email: "user2@test.com"
   password_digest: "$2a$10$IBlJrgpxu9OeWTx//mow.e4FupwgBb6J4Y/1VeuiQrc4QQR9jS2Vi"
   active: false
-  provider: "identity"
+  provider: "github"
   uid: "54321"

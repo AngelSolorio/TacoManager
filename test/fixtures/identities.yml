@@ -1,0 +1,5 @@
+identity_1:
+  id: 1
+  name: "Test Identity 1"
+  email: "identity1@test.com"
+  password_digest: "$2a$10$IBlJrgpxu9OeWTx//mow.e4FupwgBb6J4Y/1VeuiQrc4QQR9jS2Vi"

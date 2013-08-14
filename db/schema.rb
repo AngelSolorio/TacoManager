@@ -11,12 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813165548) do
+ActiveRecord::Schema.define(version: 20130814061843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "establishment_id"
+    t.string   "title"
+    t.text     "description",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dishes", force: true do |t|
+    t.string   "name",                     null: false
+    t.float    "price",      default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "establishments", force: true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.string   "address",                null: false
     t.float    "latitude"
@@ -31,9 +48,32 @@ ActiveRecord::Schema.define(version: 20130813165548) do
   add_index "establishments", ["points"], name: "index_establishments_on_points", using: :btree
 
   create_table "identities", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
+    t.string   "name",            null: false
+    t.string   "email",           null: false
+    t.string   "password_digest", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", force: true do |t|
+    t.integer  "dish_id"
+    t.integer  "establishment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rates", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "establishment_id"
+    t.integer  "rate_value",       default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requisitions", force: true do |t|
+    t.float    "cost",       default: 0.0, null: false
+    t.string   "checktime",                null: false
+    t.string   "status",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

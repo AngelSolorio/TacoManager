@@ -1,0 +1,13 @@
+comment_1:
+  id: 500
+  user_id: 100
+  establishment: 200
+  title: "Test 1"
+  description: "Description test comment 1"
+
+comment_2:
+  id: 501
+  user_id: 101
+  establishment_id: 200
+  title: "Test 2"
+  description: "Description test comment 2"

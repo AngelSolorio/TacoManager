@@ -1,19 +1,16 @@
 <%= display_alert %>
 <%= display_notice %>
 
-<section id="signup-form">
+<section id="signup-form", class="form">
   <h1><%= t('.new_user') %></h1>
   <%= form_tag "/auth/identity/register" do %>
-    <% if @user && @user.errors.any? %>
+   <!--
+ <% if @user && @user.errors.any? %>
      <div class="error_messages">
-        <h2><%= pluralize(@user.errors.count, "error") %>:</h2>
-        <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
+        <%= pluralize(@user.errors.count, "error") %>
       </div>
     <% end %>
+-->
     <div class="field">
       <%= label_tag :name, t('.name') %>
       <%= text_field_tag :name, @user.try(:name), placeholder: t('.ph_name') %>
@@ -34,9 +31,7 @@
       <%= password_field_tag :password_confirmation, nil, placeholder: t('.ph_confirmation') %>
       <%= field_error @user, :password_confirmation %>
     </div>
-    <div id="signup-button">
-      <%= submit_tag t('.register') %>
-    </div>
+    <%= submit_tag t('.register') %>
   <% end %>
 </section>
 

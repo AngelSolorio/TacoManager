@@ -10,7 +10,7 @@ describe User do
 
   let(:auth) {
     auth = {
-      "provider" => 'identity',
+      "provider" => 'facebook',
       "uid" => '9876543',
       "info" => { "name" => 'Other Test User', "email" => 'otheruser@test.com' }
     }

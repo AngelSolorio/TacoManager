@@ -26,7 +26,7 @@ en:
       submit: 'Submit'
       username: 'Username:'
       password: 'Password:'
-      p_usernam: 'Type your username'
+      p_usernam: 'Type your email'
       p_password: 'type your password'
       not_logged: 'Please login to access'
 
@@ -35,7 +35,7 @@ en:
       name: 'Name: '
       email: 'Email: '
       password: 'Password: '
-      confirmation: 'Password confirmation: '
+      confirmation: 'Confirmation: '
       register: 'Register'
       ph_name: 'Type your name here'
       ph_email: 'Type your email here'

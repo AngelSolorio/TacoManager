@@ -1,0 +1,5 @@
+requisition_1:
+  id: 400
+  cost: 15.5
+  checktime: "16:00 hrs"
+  status: "Recibido"

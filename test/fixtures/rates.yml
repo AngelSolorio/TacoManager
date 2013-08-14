@@ -1,0 +1,11 @@
+rate_1:
+  id: 600
+  user_id: 100
+  establishment_id: 200
+  rate_value: 5
+
+rate_2:
+  id: 601
+  user_id: 101
+  establishment_id: 200
+  rate_value: 4

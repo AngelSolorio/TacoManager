@@ -1,0 +1,9 @@
+dish_1:
+  id: 300
+  name: "Tacos al pastor"
+  price: 4.5
+
+dish_2:
+  id: 301
+  name: "Tacos de adobada"
+  price: 4.0

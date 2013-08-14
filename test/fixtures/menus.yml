@@ -1,0 +1,9 @@
+menu_1:
+  id: 700
+  dish_id: 300
+  establishment_id: 200
+
+menu_2:
+  id: 701
+  dish_id: 301
+  establishment_id: 200

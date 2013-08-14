@@ -1,9 +1,9 @@
 #signup-form {
   width: 300px;
-  height: 400px;
+  height: 350px;
   margin: auto;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  margin-top: $margin * 4;
+  margin-bottom: $margin * 2;
   padding: 15px;
   background-color: #fac233;
   @extend .shadow-box;
@@ -14,7 +14,35 @@
     font-size: 2em;
     color: $light-black;
     text-align: center;
-    margin: 5px;
+    margin: $margin / 2;
+  }
+
+  form {
+    label {
+      display: inline-block;
+      margin-top: $margin;
+    }
+
+    #name, #email, #password, #password_confirmation {
+      @include size(170px 15px);
+      float: right;
+      margin-top: $margin;
+    }
+
+    input[type="submit"] {
+      @extend .small_button;
+      float: right;
+      margin: ($margin * 1.5) ($margin/2) ($margin/2) ($margin/2) !important;
+    }
+
+    .error {
+      display: inline-block;
+      float: left;
+      color: brown;
+      margin-left: 110px;
+      font-size: .9em;
+      position: absolute;
+    }
   }
 }
 

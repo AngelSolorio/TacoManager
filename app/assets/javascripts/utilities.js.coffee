@@ -4,7 +4,7 @@ class HeaderAndFooter
     footer = $('#logo-footer')
     menu = $('#menu').css("display")
 
-    if $('.signout-link').length > 0 or $('#signup-button').length > 0
+    if $('.signout-link').length > 0 or $('#signup-form').length > 0
       if header.find('.big-logo-header').length > 0
         header.removeClass('big-logo-header')
       if header.find('.small-logo-header').length < 1

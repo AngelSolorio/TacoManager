@@ -7,5 +7,6 @@ class CreateRates < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index(:rates, [:user_id, :establishment_id], unique: true)
   end
 end

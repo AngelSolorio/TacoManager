@@ -12,6 +12,6 @@ class CreateEstablishments < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index(:establishments, :points)
+    add_index(:establishments, :user_id)
   end
 end

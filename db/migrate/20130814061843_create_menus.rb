@@ -6,5 +6,6 @@ class CreateMenus < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index(:menus, [:dish_id, :establishment_id], unique: true)
   end
 end

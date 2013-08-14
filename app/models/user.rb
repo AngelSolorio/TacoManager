@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :establishments, through: :comments
   has_and_belongs_to_many :establishments
+  has_many :orders
+  has_many :establishments, through: :orders
+  has_many :requisitions, through: :orders
 
   validates :provider, :name, presence: true
   validates_uniqueness_of :email, unless: 'email.nil?'

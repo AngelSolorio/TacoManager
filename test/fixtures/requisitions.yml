@@ -3,3 +3,4 @@ requisition_1:
   cost: 15.5
   checktime: "16:00 hrs"
   status: "Recibido"
+  user_id: 100

@@ -12,7 +12,6 @@ describe Menu do
 
   context "Validations" do
     it "must be valid" do
-      puts ">>>>>>>>> #{@menu_valid.errors.inspect}"
       @menu_valid.valid?.must_equal true
     end
 
@@ -31,25 +30,19 @@ describe Menu do
       @menu.establishment = establishments(:establishment_2)
 
       @menu.valid?.must_equal true
-      @menu.dish.must_be_same_as dishes(:dish_1)
-      @menu.establishment.must_equal establishments(:establishment_2)
+      @menu.dish.must_be_same_as dishes(:dish_2)
+      @menu.establishment.must_be_same_as establishments(:establishment_2)
     end
 
     it "must be unique" do
-      @menu1 = Menu.new
-      @menu1.dish = dishes(:dish_1)
-      @menu1.establishment = establishments(:establishment_1)
-      @menu1.save
+      @menu_2 = Menu.new
+      @menu_2.dish = dishes(:dish_1)
+      @menu_2.establishment = establishments(:establishment_1)
 
-      @menu2 = Menu.new
-      @menu2.dish = dishes(:dish_1)
-      @menu2.establishment = establishments(:establishment_1)
-
-      @menu2.valid?.must_equal false
-      @menu2.errors.size.must_equal 2
-      @menu2.errors[:dish_is].wont_be_nil
-      @menu2.errors[:establishment_id].wont_be_nil
+      @menu_2.valid?.must_equal false
+      @menu_2.errors.size.must_equal 1
+      @menu_2.errors[:dish_id].wont_be_nil
+      @menu_2.errors[:establishment_id].wont_be_nil
     end
   end
-
 end

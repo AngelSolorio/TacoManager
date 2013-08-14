@@ -1,0 +1,6 @@
+order_1:
+  id: 800
+  user_id: 100
+  establishment_id: 200
+  requisition_id: 400
+  cost: 125

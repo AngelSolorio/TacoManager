@@ -25,13 +25,13 @@ describe Rate do
 
   context "Relations" do
     it "must link a user and an establishment" do
-      rate = Rate.new
-      rate.user = users(:user_1)
-      rate.establishment = establishments(:establishment_1)
+      @rate = Rate.new
+      @rate.user = users(:user_1)
+      @rate.establishment = establishments(:establishment_1)
 
-      rate.valid?.must_equal true
-      rate.user.must_be_same_as users(:user_1)
-      rate.establishment.must_equal establishments(:establishment_1)
+      @rate.valid?.must_equal true
+      @rate.user.must_be_same_as users(:user_1)
+      @rate.establishment.must_equal establishments(:establishment_1)
     end
   end
 end

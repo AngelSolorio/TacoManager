@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130814061843) do
+ActiveRecord::Schema.define(version: 20130814183858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20130814061843) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "comments", ["user_id", "establishment_id"], name: "index_comments_on_user_id_and_establishment_id", unique: true, using: :btree
 
   create_table "dishes", force: true do |t|
     t.string   "name",                     null: false
@@ -45,7 +47,7 @@ ActiveRecord::Schema.define(version: 20130814061843) do
     t.datetime "updated_at"
   end
 
-  add_index "establishments", ["points"], name: "index_establishments_on_points", using: :btree
+  add_index "establishments", ["user_id"], name: "index_establishments_on_user_id", using: :btree
 
   create_table "identities", force: true do |t|
     t.string   "name",            null: false
@@ -55,12 +57,35 @@ ActiveRecord::Schema.define(version: 20130814061843) do
     t.datetime "updated_at"
   end
 
+  create_table "includes", force: true do |t|
+    t.integer  "dish_id"
+    t.integer  "order_id"
+    t.integer  "quantity",   default: 1, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "includes", ["dish_id", "order_id"], name: "index_includes_on_dish_id_and_order_id", unique: true, using: :btree
+
   create_table "menus", force: true do |t|
     t.integer  "dish_id"
     t.integer  "establishment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "menus", ["dish_id", "establishment_id"], name: "index_menus_on_dish_id_and_establishment_id", unique: true, using: :btree
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "establishment_id"
+    t.integer  "requisition_id"
+    t.float    "cost",             default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "orders", ["user_id", "establishment_id", "requisition_id"], name: "index_orders_on_user_id_and_establishment_id_and_requisition_id", unique: true, using: :btree
 
   create_table "rates", force: true do |t|
     t.integer  "user_id"
@@ -70,13 +95,18 @@ ActiveRecord::Schema.define(version: 20130814061843) do
     t.datetime "updated_at"
   end
 
+  add_index "rates", ["user_id", "establishment_id"], name: "index_rates_on_user_id_and_establishment_id", unique: true, using: :btree
+
   create_table "requisitions", force: true do |t|
+    t.integer  "user_id"
     t.float    "cost",       default: 0.0, null: false
     t.string   "checktime",                null: false
     t.string   "status",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "requisitions", ["user_id"], name: "index_requisitions_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",                           null: false

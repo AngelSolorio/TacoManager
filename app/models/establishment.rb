@@ -6,6 +6,7 @@ class Establishment < ActiveRecord::Base
   has_many :orders
   has_many :users, through: :orders
   has_many :requisitions, through: :orders
+  has_many :images
 
   validates_presence_of :address, :phone, :schedule, :user_id
 end

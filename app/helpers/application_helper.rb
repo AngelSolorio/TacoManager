@@ -5,6 +5,12 @@ module ApplicationHelper
     end
   end
 
+#   def display_user_image(user)
+#     content_tag :div, class: 'user-photo' do
+#       if user.image
+#     end
+#   end
+
   def display_warden_message_tag
     content_tag :div, class: 'alert' do
       warden.message

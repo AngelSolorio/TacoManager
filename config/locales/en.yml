@@ -1,4 +1,10 @@
 en:
+  auth:
+    authentication:
+      welcome: 'Welcome, %{user}!'
+      signout: 'Signout'
+      not_logged: 'Please login to access'
+
   layouts:
     application:
       menu_profile: 'Profile'
@@ -9,7 +15,7 @@ en:
     new:
       username: 'Username'
       password: 'Password'
-      ph_username: 'Type your username'
+      ph_username: 'Type your email'
       ph_password: 'Type your password'
       login: 'Log in'
       create_account: 'Create a new account'
@@ -19,16 +25,12 @@ en:
     destroy:
       signed_out: 'Signed out'
 
-  home:
-    index:
-      signout: 'Signout'
-      welcome: 'Welcome, %{user}!'
-      submit: 'Submit'
-      username: 'Username:'
-      password: 'Password:'
-      p_usernam: 'Type your email'
-      p_password: 'type your password'
-      not_logged: 'Please login to access'
+  profile:
+    show:
+      personal-info: 'Personal Information'
+      name: 'Name'
+      email: 'Email'
+      upload_picture: 'Upload picture'
 
   users:
     new:
@@ -41,3 +43,4 @@ en:
       ph_email: 'Type your email here'
       ph_password: 'Type your password'
       ph_confirmation: 'Type again your password here'
+      cancel: 'Cancel'

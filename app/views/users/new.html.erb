@@ -21,17 +21,18 @@
       <%= email_field_tag :email, @user.try(:email), placeholder: t('.ph_email') %>
       <%= field_error @user, :email %>
     </div>
-    <div class="field">
+    <div class="field password_field">
       <%= label_tag :password, t('.password') %>
       <%= password_field_tag :password, nil, placeholder: t('.ph_password') %>
       <%= field_error @user, :password %>
     </div>
-    <div class="field">
+    <div class="field confirmation_field">
       <%= label_tag :password_confirmation, t('.confirmation') %>
       <%= password_field_tag :password_confirmation, nil, placeholder: t('.ph_confirmation') %>
       <%= field_error @user, :password_confirmation %>
     </div>
     <%= submit_tag t('.register') %>
+    <%= link_to t('.cancel'), signin_path, class: "cancel-signup" %>
   <% end %>
 </section>
 

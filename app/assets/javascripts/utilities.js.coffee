@@ -24,4 +24,11 @@ class HeaderAndFooter
       if menu == "block"
         $('#menu').css("display", "none")
 
+class Highlights
+  constructor: ->
+    $.getScript("http://yandex.st/highlightjs/6.1/highlight.min.js", ->
+      hljs.initHighlighting()
+    )
+
 App.Utilities.HeaderAndFooter = HeaderAndFooter
+App.Utilities.Highlights = Highlights

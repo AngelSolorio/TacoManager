@@ -1,0 +1,33 @@
+#info-user-profile {
+  padding-bottom: $padding;
+  border-bottom: solid #CCCCCC;
+  border-bottom-width: 1px;
+
+  h1 { text-align: center; }
+
+  #picture-profile {
+    float: left;
+    margin-right: $margin;
+    width: 280px;
+
+    #photo {
+      position: absolute;
+      margin: 12px 0 0 15px;
+    }
+  }
+
+  #user-data {
+    float: left;
+    margin-left: $margin;
+
+    input {
+      @include size(250px 15px);
+      margin: ($margin ) 0  0 ($margin / 4);
+    }
+  }
+
+  #load-user-photo {
+    @extend .small_yellow_button;
+    margin: ($margin / 2) ($margin / 2) 0 ($margin * 2) !important;
+   }
+}

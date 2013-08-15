@@ -18,6 +18,8 @@
   }
 
   form {
+    .field { z-index: 99; }
+
     label {
       display: inline-block;
       margin-top: $margin;
@@ -30,9 +32,19 @@
     }
 
     input[type="submit"] {
-      @extend .small_button;
+      @extend .small_yellow_button;
       float: right;
       margin: ($margin * 1.5) ($margin/2) ($margin/2) ($margin/2) !important;
+    }
+
+    .cancel-signup {
+      @extend .small_red_button;
+      float: right;
+      margin: ($margin * 1.5) ($margin * 4) ($margin/2) ($margin/2) !important;
+
+      font: -webkit-small-control !important;
+      font-weight: bold !important;
+      font-size: .8em !important;
     }
 
     .error {
@@ -42,6 +54,16 @@
       margin-left: 110px;
       font-size: .9em;
       position: absolute;
+      z-index: 100;
+      margin: 45px 60px;
+    }
+
+    .password_field {
+      .error { margin: 45px 30px ; }
+    }
+
+    .confirmation_field {
+      .error { margin: 45px 10px ; }
     }
   }
 }

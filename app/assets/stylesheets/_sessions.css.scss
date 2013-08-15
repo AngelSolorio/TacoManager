@@ -1,8 +1,13 @@
+.container { height: 500px; }
+
 #big-taco {
   width: 498px;
   height: 364px;
   margin-top: $margin * 4;
   float: left;
+  top: 80px;
+  left: 180px;
+  position: absolute;
 }
 
 #signin-form {
@@ -10,6 +15,10 @@
   margin-left: $margin * 6;
   display: inline-table;
   position: absolute;
+  float: left;
+
+  top: 90px;
+  left: 670px;
 
   form {
     display: inline-block;
@@ -20,7 +29,7 @@
       margin-right: $margin / 2;
 
       input[type="submit"] {
-        @extend .small_button;
+        @extend .small_yellow_button;
       }
     }
 

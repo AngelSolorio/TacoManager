@@ -1,9 +1,10 @@
 @import "bourbon";
 @import "variables";
 @import "sessions";
-@import "home";
+@import "profile";
 @import "users";
 @import "zocial";
+@import "highlight/default";
 
 section, div, article { overflow: hidden; }
 
@@ -59,6 +60,7 @@ body { margin: 0; }
     list-style-type: none;
     margin: ($margin * 2) $margin ($margin) ($margin * 2);
     float: right;
+    font-family: "Merienda";
 
     li {
       height: 40px;
@@ -80,12 +82,30 @@ body { margin: 0; }
       a {
         color: $marron;
         font-weight: bold;
-        font-size: 1.2em;
+        font-size: 1.4em;
         text-decoration: none;
         margin-left: $margin;
       }
     }
   }
+}
+
+#logged-user {
+  margin: $margin;
+
+  .signout-link, .user-logged {
+    float: right;
+    font-family: Merienda;
+    font-weight: bold;
+    color: #9c4a4a;
+  }
+
+  .signout-link {
+    @extend .small_red_button;
+    font-size: .9em !important;
+  }
+
+  .user-logged { margin: 7px 20px; }
 }
 
 .main-footer {
@@ -112,6 +132,31 @@ body { margin: 0; }
     z-index: 900;
     position: absolute;
   }
+}
+
+.alert {
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid $red;
+  background: rgba(253, 2, 2, 0.64);
+  color: #800;
+  opacity: 0.5;
+  font-family: "Roboto";
+  font-weight: bold;
+  color: white;
+  opacity: .9;
+}
+
+.notice {
+  padding: ($padding / 2);
+  margin-bottom: $margin;
+  border-radius: 3px;
+  border: 1px solid green;
+  background-color: rgba(36,134,48,0.250);
+  opacity: 0.5;
+  font-family: "Roboto";
+  color: #080;
 }
 
 .inner-shadow-top {
@@ -149,10 +194,16 @@ body { margin: 0; }
   padding: $padding;
 }
 
-.small_button {
+.small_yellow_button {
   @include awesome_button($dark-yellow, 4px, 5px 15px);
   font-size: .8em;
 }
+
+.small_red_button {
+  @include awesome_button($red, 4px, 5px 15px);
+  font-size: .8em;
+}
+
 
 .form {
   input[type="text"], input[type="email"], input[type="password"], textarea {

@@ -4,3 +4,10 @@ requisition_1:
   checktime: "16:00 hrs"
   status: "Recibido"
   user_id: 100
+
+requisition_2:
+  id: 401
+  cost: 15.5
+  checktime: "15:00 hrs"
+  status: "No llega"
+  user_id: 100

@@ -3,3 +3,15 @@ include_1:
   order_id: 800
   dish_id: 300
   quantity: 3
+
+include_2:
+  id: 901
+  order_id: 801
+  dish_id: 300
+  quantity: 5
+
+include_3:
+  id: 902
+  order_id: 801
+  dish_id: 301
+  quantity: 2

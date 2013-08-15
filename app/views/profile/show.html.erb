@@ -1,0 +1,37 @@
+<container>
+  <%= render "auth/authentication" %>
+
+  <section id="info-user-profile">
+    <h1><%= t('.personal-info') %></h1>
+    <%= form_for @user, url: user_path(@user), html: { multipart: true } do |f| %>
+      <span id="picture-profile">
+        <%= image_tag "frame.png", id: "picture-frame", size: "200x200" %>
+        <%= image_tag @user.picture.url(:thumb), id: "photo" %>
+        <span id="user-photo"></span>
+        <button id="load-user-photo" type="button"><%= t('.upload_picture') %></button>
+      </span>
+      <div id="user-data" class="form">
+        <div class="field">
+          <%= f.label :name %>:
+          <%= f.text_field :name, @user.try(:name) %>
+        </div>
+        <div class="field">
+          <%= f.label t('.email') %>:
+          <%= f.email_field :email, @user.try(:email), disable: true %>
+        </div>
+      </div>
+    <% end %>
+  </section>
+  <div class="line" style="background-color: white; height: 1px; width: 1024px"></div>
+
+</container>
+
+<script type="text/javascript">
+  document.addEventListener('page:load', function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+
+  $(function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+</script>

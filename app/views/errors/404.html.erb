@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300'" rel="stylesheet" type="text/css">
+    <title>404 Not Found</title>
+    <%= favicon_link_tag "favicon.ico" %>
+    <%= stylesheet_link_tag "application" %>
+  </head>
+  <body>
+    <%= render "auth/authentication" %>
+   	<div style="width: 1024px; margin: 0 auto; margin-top:20px; text-align:center">
+   		<%= image_tag "working.png", width: 350 %>
+   		<h1 style="font-size: 2em; margin:20px; color:#BE1E19">SECCIÓN EN DESARROLLO</h1>
+   		<p style="font-size: 2em; margin-bottom:80px">
+   			Lo sentimos, la página que esta buscando
+   			no la podemos mostrar aún.</p>
+   	</div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  document.addEventListener('page:load', function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+
+  $(function(){
+    new App.Utilities.HeaderAndFooter();
+  });
+</script>

@@ -12,5 +12,5 @@ TacoManager::Application.routes.draw do
     post '/sessions/create' => 'sessions#create'
   end
 
-  get 'working', :to => 'errors#working'
+  get 'working', :to => 'errors#working', as: :working_in_progress
 end

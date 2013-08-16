@@ -27,10 +27,18 @@ en:
 
   profile:
     show:
+      not_logged: 'Please, sign in to access'
       personal-info: 'Personal Information'
       name: 'Name'
       email: 'Email'
       upload_picture: 'Upload picture'
+      orders-created: "Orders Created"
+      establishments-created: 'Establishments Created'
+      empty-list-user-establishments: "You haven't created stablishments yet"
+      empty-list-user-orders: "You have't created orders yet"
+    form:
+      name: 'Name'
+      email: 'Email'
 
   users:
     new:

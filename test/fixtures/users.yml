@@ -1,11 +1,11 @@
 user_1:
   id: 100
-  name: "Test user"
-  email: "user@test.com"
-  password_digest: "$2a$10$uaAIvMF5xX2NNtJ10w/BkubKZh12fEIGQyT.20lp4TYSCU1pGISkW"
+  name: "Angel Solorio"
+  email: "angel.solorio@me.com"
+  password_digest: "$2a$10$nwKnY/lV6VMCctUUwMhEBeFOeQ4DIXKBpU2lZ5a8Vh5iG4v.oFnbm"
   active: true
-  provider: "twitter"
-  uid: "12345"
+  provider: "identity"
+  uid: "2"
 
 user_2:
   id: 101

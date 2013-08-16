@@ -1,0 +1,62 @@
+<!--
+<section class="content">
+  <%= display_notice %>
+  <%= display_alert %>
+  <div class="content title-item">
+    <h3>
+      <%= @establishment.name %>
+      <div class="score">
+        <div id="good" data-establishment-id="<%= @establishment.id %>"><%= @establishment.likes.size %></div>
+        <div id="bad" data-establishment-id="<%= @establishment.id %>"><%= @establishment.dislikes.size %></div>
+      </div>
+    </h3>
+    <%= form_for @order, url: dashboard_establishment_orders_path(establishment_id: params[:id]) do |f| %>
+      <%= f.submit t('.order_to'), class: 'button' %>
+    <% end %>
+    <%= display_add @establishment %>
+    <%= display_edit @establishment %>
+  </div>
+  <p class="content">
+  <%= "#{t('.address')}: #{@establishment.address.full_address}" %></br>
+  <%= "#{t('.schedule')}: #{@establishment.schedule}" %></br>
+  <%= "#{t('.phones')}: #{@establishment.phone}" %>
+  </p>
+  <div class="span4">
+    <h4 class="content menu"<%= t('.menu') %></h4>
+    <section id="foods">
+      <%= display_foods t('.food_empty'), { partial: 'dashboard/foods/food', collection: @foods } %>
+    </section>
+  </div>
+  <div class="span7">
+    <div class="gallery">
+      <div id="thumbs">
+        <% @establishment.images.each do |item| %>
+          <%= image_tag item.image.url(:thumb) %>
+        <% end %>
+      </div>
+    </div>
+    <%= render partial: 'dashboard/images/form', locals: { object: @establishment } %>
+    <div id="map"></div>
+    <h5>Comentarios:</h5>
+    <div class="comments">
+      <%= render partial: 'dashboard/comment/comment', collection: @establishment.comments or 'Ningun comentario' %>
+    </div>
+    <%= form_for @comment, url: dashboard_establishment_comment_path(establishment_id: @establishment.id) do |f| %>
+      <%= f.text_field :comment %>
+      <%= f.submit 'Commentar', class: 'button' %>
+    <% end %>
+  </div>
+</section>
+<script type="text/javascript">
+<% params = "#{@establishment.address.latitude}, #{@establishment.address.longitude}".html_safe %>
+document.addEventListener('page:change', function(){
+  new App.Utilities.Map(<%= params %>);
+  new App.Utilities.Vote();
+});
+
+$(function(){
+  new App.Utilities.Map(<%= params %>);
+  new App.Utilities.Vote();
+});
+</script>
+-->

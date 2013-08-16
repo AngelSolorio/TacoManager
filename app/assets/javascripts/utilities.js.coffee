@@ -11,7 +11,7 @@ class HeaderAndFooter
         header.addClass('small-logo-header')
       if footer.find('.logo-footer').length < 1
         footer.addClass('logo-footer')
-      if menu == "block" and $('#signup-button').length > 0
+      if menu == "block" and $('#signup-form').length > 0
         $('#menu').css("display", "none")
 
     else

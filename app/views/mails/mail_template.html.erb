@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      <h4>Hello, <%= @user.name %>!</h4><br>
+      The user <b><%= @invitate %></b> has envited you to create a food order in his/her requisition.
+      To access click the following link:<br><br>
+      <%= link_to 'Go to the requisition', "http://tacomanager.angelsolorio.com/?invitation=#{@url_invitation}" %>
+    </p>
+  </body>
+</html>

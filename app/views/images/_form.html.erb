@@ -1,0 +1,5 @@
+<%= form_for object, url: images_path, method: :post, html: { :multipart => true, class: 'add-image', id: 'add-image-item' } do |f| %>
+  <%= f.hidden_field :id %>
+  <%= f.file_field :image %>
+  <%= f.submit t('.upload_image') %>
+<% end %>

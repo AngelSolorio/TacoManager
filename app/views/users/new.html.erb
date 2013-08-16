@@ -1,16 +1,6 @@
-<%= display_alert %>
-<%= display_notice %>
-
 <section id="signup-form", class="form">
   <h1><%= t('.new_user') %></h1>
   <%= form_tag "/auth/identity/register" do %>
-   <!--
- <% if @user && @user.errors.any? %>
-     <div class="error_messages">
-        <%= pluralize(@user.errors.count, "error") %>
-      </div>
-    <% end %>
--->
     <div class="field">
       <%= label_tag :name, t('.name') %>
       <%= text_field_tag :name, @user.try(:name), placeholder: t('.ph_name') %>
@@ -37,7 +27,7 @@
 </section>
 
 <script type="text/javascript">
-  document.addEventListener('page:load', function(){
+  document.addEventListener('page:change', function(){
     new App.Utilities.HeaderAndFooter();
   });
 

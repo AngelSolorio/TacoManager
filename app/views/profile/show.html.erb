@@ -1,29 +1,34 @@
 <container>
   <%= render "auth/authentication" %>
 
-  <section id="info-user-profile">
-    <h1><%= t('.personal-info') %></h1>
-    <%= form_for @user, url: user_path(@user), html: { multipart: true } do |f| %>
-      <span id="picture-profile">
-        <%= image_tag "frame.png", id: "picture-frame", size: "200x200" %>
-        <%= image_tag @user.picture.url(:thumb), id: "photo" %>
-        <span id="user-photo"></span>
-        <button id="load-user-photo" type="button"><%= t('.upload_picture') %></button>
-      </span>
-      <div id="user-data" class="form">
-        <div class="field">
-          <%= f.label :name %>:
-          <%= f.text_field :name, @user.try(:name) %>
-        </div>
-        <div class="field">
-          <%= f.label t('.email') %>:
-          <%= f.email_field :email, @user.try(:email), disable: true %>
-        </div>
-      </div>
-    <% end %>
+  <section id="info-user-profile" class="section">
+    <h1 class="title-section"><%= t('.personal-info') %></h1>
+    <%= render partial: "form", locals: {user: @user} %>
   </section>
   <div class="line" style="background-color: white; height: 1px; width: 1024px"></div>
 
+  <section id="info-user-orders" class="section">
+    <h1 class="title-section"><%= t('.orders-created') %></h1>
+    <table class="pure-table pure-table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t('.created_at') %>:</th>
+          <th><%= t('.cost') %>:</th>
+          <th><%= t('.time_to_arrive') %>:</th>
+          <th><%= t('.status') %>:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "order", collection: @user.orders, as: :order %>
+      </tbody>
+    </table>
+  </section>
+  <div class="line" style="background-color: white; height: 1px; width: 1024px"></div>
+
+  <section id="info-user-establishments">
+    <h1 class="title-section"><%= t('.establishments-created') %></h1>
+  </section>
 </container>
 
 <script type="text/javascript">

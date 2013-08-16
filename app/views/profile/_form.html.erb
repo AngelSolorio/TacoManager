@@ -1,0 +1,18 @@
+<%= form_for user, url: user_path(user), html: { multipart: true } do |f| %>
+  <span id="picture-profile">
+    <%= image_tag "frame.png", id: "picture-frame", size: "200x200" %>
+    <%= image_tag user.picture.url(:thumb), id: "photo" %>
+    <span id="user-photo"></span>
+    <button id="load-user-photo" type="button"><%= t('.upload_picture') %></button>
+  </span>
+  <div id="user-data" class="form">
+    <div class="field">
+      <%= f.label t('.name') %>:
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label t('.email') %>:
+      <%= f.email_field :email, disable: true %>
+    </div>
+  </div>
+<% end %>

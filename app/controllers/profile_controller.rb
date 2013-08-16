@@ -3,6 +3,5 @@ class ProfileController < ApplicationController
 
   def show
     @user = User.find_by_id current_user.id
-    Rails.logger.debug "*********** User => #{@user.inspect}"
   end
 end

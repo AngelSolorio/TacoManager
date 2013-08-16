@@ -1,9 +1,14 @@
-#info-user-profile {
-  padding-bottom: $padding;
+.container { height: auto; }
+
+.title-section { text-align: center; }
+
+.section {
   border-bottom: solid #CCCCCC;
   border-bottom-width: 1px;
+}
 
-  h1 { text-align: center; }
+#info-user-profile {
+  padding-bottom: $padding;
 
   #picture-profile {
     float: left;
@@ -30,4 +35,21 @@
     @extend .small_yellow_button;
     margin: ($margin / 2) ($margin / 2) 0 ($margin * 2) !important;
    }
+}
+
+/*
+#info-user-stablishments {
+  .list-user-establishments {
+    h3 { text-align: center; }
+  }
+}
+*/
+
+.empty-message { text-align: center; }
+
+.gray-label {
+  line-height: 2em;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #6e6d6c;
 }

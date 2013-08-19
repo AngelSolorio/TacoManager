@@ -20,7 +20,6 @@ Warden::Strategies.add(:omniauth_public) do
   def authenticate!
     auth = request.env['omniauth.auth']
 
-    Rails.logger.debug "----- #{auth.inspect} -----"
     user = User.from_omniauth(auth)
     return fail! I18n.t('warden.strategies.unauthorized_user') unless user.active
     success! user

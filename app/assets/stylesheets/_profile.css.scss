@@ -12,12 +12,18 @@
 
   #picture-profile {
     float: left;
-    margin-right: $margin;
-    width: 280px;
+    width: 200px;
+    margin: 0 40px 0 80px;
 
-    #photo {
+    #picture-frame {
+      padding: 15px 0 0 44px;
+    }
+
+    #photo, #avatar {
+      width: 112px;
+      height: 112px;
       position: absolute;
-      margin: 12px 0 0 15px;
+      padding: 21px 0 0 49px;
     }
   }
 
@@ -25,25 +31,54 @@
     float: left;
     margin-left: $margin;
 
-    input {
+    input[type="text"], input[type="email"] {
       @include size(250px 15px);
-      margin: ($margin ) 0  0 ($margin / 4);
+      margin: ($margin ) ($margin / 4)  0 ($margin / 4);
     }
+
+    #update-profile-button {
+      @extend .small_yellow_button;
+      margin: ($margin * 1.5) ($margin * 6.5) !important;
+    }
+
   }
 
-  #load-user-photo {
-    @extend .small_yellow_button;
-    margin: ($margin / 2) ($margin / 2) 0 ($margin * 2) !important;
-   }
-}
-
-/*
-#info-user-stablishments {
-  .list-user-establishments {
-    h3 { text-align: center; }
+  input[type="file"] {
+    //@extend .small_yellow_button;
+/*     margin: ($margin / 2) ($margin / 2) 0 ($margin * 2) !important; */
   }
 }
-*/
+
+.pure-table {
+  margin: 0 0 2em 0;
+
+  .pure-table-odd { background-color: white; }
+
+  .pure-table-even { background-color: #E7E7E7; }
+
+  th, td { text-align: center; }
+
+  .size-one { width: 10px; }
+  .size-three { width: 30px; }
+  .size-one { width: 10px; }
+  .size-one { width: 10px; }
+
+  .large { width: 20em; }
+  .medium { width: 15em; }
+  .small { width: 5em; }
+
+  .pure-button-secondary {
+    font-size: 85%;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: rgb(66, 184, 221);
+  }
+
+  .pure-button-secondary:hover {
+    background: rgb(66, 170, 202);
+  }
+}
 
 .empty-message { text-align: center; }
 

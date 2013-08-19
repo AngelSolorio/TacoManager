@@ -8,14 +8,10 @@
 }
 
 #signin-form {
-  margin-top: $margin * 9;
-  margin-left: $margin * 6;
+  margin: ($margin * 10) 0 $margin ($margin * 6);
   display: inline-table;
-  position: absolute;
+  position: relative;
   float: left;
-
-  top: 90px;
-  left: 670px;
 
   form {
     display: inline-block;

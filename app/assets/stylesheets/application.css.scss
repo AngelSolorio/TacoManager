@@ -1,14 +1,21 @@
 @import "bourbon";
 @import "variables";
+@import "purecss/menus";
+@import "purecss/tables";
+@import "font-awesome";
 @import "sessions";
 @import "profile";
 @import "users";
 @import "zocial";
 @import "highlight/default";
 
+html, body { height: 100%; }
+
 section, div, article { overflow: hidden; }
 
 body { margin: 0; }
+
+footer { height: 20%; }
 
 .container {
   width: grid-width(12);

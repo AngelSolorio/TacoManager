@@ -1,4 +1,9 @@
 en:
+  activerecord:
+    errors:
+      messages:
+        invalid: 'Invalid date'
+
   auth:
     authentication:
       welcome: 'Welcome, %{user}!'
@@ -32,13 +37,23 @@ en:
       name: 'Name'
       email: 'Email'
       upload_picture: 'Upload picture'
-      orders-created: "Orders Created"
+      orders-created: 'Orders Created'
+      created_at: 'Created at'
+      establishment: 'Establishment'
+      cost: 'Cost'
+      status: 'Status'
+      name: 'Name'
+      address: 'Adress'
+      phone: 'Phone'
+      time_to_arrive: 'Time to arrive'
       establishments-created: 'Establishments Created'
       empty-list-user-establishments: "You haven't created stablishments yet"
       empty-list-user-orders: "You have't created orders yet"
     form:
       name: 'Name'
       email: 'Email'
+      save: 'Save'
+      upload_picture: 'Upload picture'
 
   users:
     new:
@@ -52,3 +67,37 @@ en:
       ph_password: 'Type your password'
       ph_confirmation: 'Type again your password here'
       cancel: 'Cancel'
+    update:
+      user_updated: 'User info updated'
+      errors_updating: 'There were errors trying to updated user info'
+
+  date:
+    formats:
+      default: '%Y-%m-%d'
+      short: '%b %d'
+      long: '%B %d, %Y'
+      long_date: 'El %d de %B de %Y'
+      month_name: '%B'
+      day_name: '%A'
+      custom_short: '%A %d de %B'
+
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+    abbr_day_names: [Dom, Lun, Mar, Vie, Jue, Vie, Sab]
+
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+
+    order:
+      - year
+      - month
+      - day
+
+  time:
+    formats:
+      default: '%a, %d %b %Y %H:%M:%S %z'
+      short: '%d %b %H:%M'
+      long: '%B %d, %Y %H:%M'
+      short_time: '%l:%M %p'
+
+    am: 'AM'
+    pm: 'PM'

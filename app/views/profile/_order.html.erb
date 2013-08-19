@@ -1,6 +1,8 @@
-<tr class="pure-table-odd">
-  <td><%= order.created_at %></td>
-  <td><%= order.cost %></td
-  <td><%= order.requisition[:checktime] %></td>
+<tr class=<%= (order_counter + 1).odd? ? "pure-table-odd" : "pure-table-even"%>>
+  <td><%= order_counter + 1 %></td>
+  <td><%= localize_date(order.created_at, :custom_short) %></td>
+  <td><%= order.establishment[:name] %></td>
+  <td>$<%= order.cost %> MXN</td>
+  <td><%= localize_time(order.requisition[:checktime], :short_time) %></td>
   <td><%= order.requisition[:status] %></td>
 </tr>

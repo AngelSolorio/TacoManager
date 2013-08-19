@@ -1,0 +1,14 @@
+<table class="pure-table pure-table-striped">
+  <thead>
+    <tr>
+      <th style="width: 10px;">#</th>
+      <th style="width: 200px;"><%= t('.created_at') %></th>
+      <th style="width: 300px;"><%= t('.name') %></th>
+      <th style="width: 300px;"><%= t('.address') %></th>
+      <th style="width: 150px;"><%= t('.phone') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "establishment", collection: user.establishments.distinct(), as: :establishment %>
+  </tbody>
+</table>

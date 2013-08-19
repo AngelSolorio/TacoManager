@@ -1,9 +1,10 @@
 <%= form_for user, url: user_path(user), html: { multipart: true } do |f| %>
   <span id="picture-profile">
-    <%= image_tag "frame.png", id: "picture-frame", size: "200x200" %>
-    <%= image_tag user.picture.url(:thumb), id: "photo" %>
-    <span id="user-photo"></span>
-    <button id="load-user-photo" type="button"><%= t('.upload_picture') %></button>
+    <%= image_tag "frame.png", id: "picture-frame" %>
+    <%= display_avatar(user) %>
+    <%= f.file_field :picture %>
+    <%= field_error user, :picture_content_type %>
+    <%= field_error user, :picture_file_size %>
   </span>
   <div id="user-data" class="form">
     <div class="field">
@@ -14,5 +15,6 @@
       <%= f.label t('.email') %>:
       <%= f.email_field :email, disable: true %>
     </div>
+    <%= f.submit t('.save'), id: "update-profile-button" %>
   </div>
 <% end %>

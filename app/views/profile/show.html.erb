@@ -9,25 +9,13 @@
 
   <section id="info-user-orders" class="section">
     <h1 class="title-section"><%= t('.orders-created') %></h1>
-    <table class="pure-table pure-table-striped">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th><%= t('.created_at') %>:</th>
-          <th><%= t('.cost') %>:</th>
-          <th><%= t('.time_to_arrive') %>:</th>
-          <th><%= t('.status') %>:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render partial: "order", collection: @user.orders, as: :order %>
-      </tbody>
-    </table>
+    <%= display_user_orders(@user) %>
   </section>
   <div class="line" style="background-color: white; height: 1px; width: 1024px"></div>
 
   <section id="info-user-establishments">
     <h1 class="title-section"><%= t('.establishments-created') %></h1>
+    <%= display_user_establishments(@user) %>
   </section>
 </container>
 

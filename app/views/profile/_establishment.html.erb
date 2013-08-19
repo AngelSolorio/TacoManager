@@ -1,0 +1,7 @@
+<tr class=<%= (establishment_counter + 1).odd? ? "pure-table-odd" : "pure-table-even"%>>
+  <td><%= establishment_counter + 1 %></td>
+  <td><%= localize_date(establishment.created_at, :custom_short) %></td>
+  <td><%= establishment.name %></td>
+  <td><%= establishment.address %></td>
+  <td><%= establishment.phone %></td>
+</tr>

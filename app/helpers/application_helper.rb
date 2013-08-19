@@ -36,4 +36,12 @@ module ApplicationHelper
       end
     end
   end
+
+  def localize_date(date, format)
+    I18n::localize(date, format: t(format, scope: [:date, :formats]))
+  end
+
+  def localize_time(time, format)
+    I18n::localize(time, format: t(format, scope: [:time, :formats]))
+  end
 end

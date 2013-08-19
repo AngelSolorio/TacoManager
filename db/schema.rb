@@ -111,9 +111,9 @@ ActiveRecord::Schema.define(version: 20130814224235) do
 
   create_table "requisitions", force: true do |t|
     t.integer  "user_id"
-    t.float    "cost",       default: 0.0, null: false
-    t.string   "checktime",                null: false
-    t.string   "status",                   null: false
+    t.float    "cost",       default: 0.0,                   null: false
+    t.time     "checktime",  default: '2000-01-01 02:40:47', null: false
+    t.string   "status",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 20130814224235) do
     t.string   "provider"
     t.string   "uid"
     t.boolean  "active",               default: true
+    t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture_file_name"

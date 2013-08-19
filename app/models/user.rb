@@ -5,17 +5,19 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :establishments
   has_many :orders
   has_many :establishments, through: :orders
-  has_many :requisitions
   has_many :requisitions, through: :orders
+  has_many :requisitions
 
   validates :provider, :name, presence: true
   validates_uniqueness_of :email, unless: 'email.nil?'
   validates_format_of :email, with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, unless: 'email.nil?'
 
-  has_attached_file :picture, default_url: 'generic_person.jpg', styles: { medium: '360x>', thumb: '170x>' }
+  has_attached_file :picture, styles: { medium: '224x>', thumb: '112x>' }
   validates_attachment :picture, size: { less_than_or_equal_to: 1.megabytes }, content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png'] }
 
-  scope :my_user, -> (user) { where(id: user.id) }
+  def picture_from_url(url)
+    self.picture = URI.parse(url)
+  end
 
   def self.from_omniauth(auth)
     find_by_provider_and_uid(auth['provider'], auth['uid']) ||
@@ -29,6 +31,8 @@ class User < ActiveRecord::Base
       user.uid = auth['uid']
       user.name = auth['info']['name']
       user.email = auth['info']['email']
+      user.image_url = auth['info']['image'] if user.provider != ['identity']
+      Rails.logger.debug "USER =============> #{user.inspect} <======"
     end
   end
 end

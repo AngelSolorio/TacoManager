@@ -27,6 +27,7 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
   gem 'bourbon'
   gem 'font-awesome-sass-rails'
+  gem 'purecss-rails'
 end
 
 group :development, :test do

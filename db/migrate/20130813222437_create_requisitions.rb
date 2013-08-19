@@ -3,7 +3,7 @@ class CreateRequisitions < ActiveRecord::Migration
     create_table :requisitions do |t|
       t.belongs_to :user
       t.float :cost, null: false, default: 0
-      t.string :checktime, null: false
+      t.time :checktime, null: false, default: Time.now + 1.hour
       t.string :status, null: false
 
       t.timestamps

@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.string :uid
       t.boolean :active, default: true
+      t.string :image_url
 
       t.timestamps
     end

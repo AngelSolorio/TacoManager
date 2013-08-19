@@ -152,6 +152,8 @@ GEM
       pry (>= 0.9.10)
     puma (2.5.0)
       rack (>= 1.1, < 2.0)
+    purecss-rails (0.2.0)
+      railties (>= 3.2.6, < 5)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   pretty_formatter
   pry-rails
   puma
+  purecss-rails
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc

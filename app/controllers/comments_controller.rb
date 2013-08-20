@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
   def create
     @establishment = Establishment.find_by_id params[:establishment_id]
 
-    @comment = Comment.new title: params[:title], description; params[:description]
+    @comment = Comment.new title: params[:title], description: params[:description]
     @comment.establishment = @establishment
     @comment.user = current_user
     @comment.save

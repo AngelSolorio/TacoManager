@@ -52,6 +52,7 @@ class EstablishmentsController < ApplicationController
 
     if @establishment.destroy
     redirect_to  establishments_path(@establishment), deleted, t('.establishment_deleted')
+    end
   end
 
   private

@@ -9,4 +9,6 @@ class Establishment < ActiveRecord::Base
   has_many :images
 
   validates_presence_of :address, :phone, :schedule, :user_id
+
+  accepts_nested_attributes_for :comments
 end

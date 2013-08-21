@@ -26,7 +26,7 @@ footer { height: 20%; }
 .big-logo-header {
   width: 927px;
   height: 443px;
-  background: url("flannel.png") no-repeat;
+  background: image-url("flannel.png") no-repeat;
   position: absolute;
   margin-left: $margin * 4;
 }
@@ -34,7 +34,7 @@ footer { height: 20%; }
 .small-logo-header {
   width: 440px;
   height: 126px;
-  background: url("mini-logo.png") no-repeat;
+  background: image-url("mini-logo.png") no-repeat;
   position: absolute;
   margin-left: $margin * 4;
 }
@@ -45,18 +45,18 @@ footer { height: 20%; }
   float: right;
   position: relative;
   z-index: 800;
-  background: url("foot-logo.png") no-repeat;
+  background: image-url("foot-logo.png") no-repeat;
 }
 
 .main-header {
   height: 80px;
   width: 100%;
-  background-image:url('background.jpg');
+  background: image-url('background.jpg');
 
   #circles {
     width: 113px;
     height: 30px;
-    background:url('circles.jpg');
+    background: image-url('circles.jpg');
     @include transform(rotate(180deg));
     margin-left: $margin;
     margin-top: $margin * 2.5;
@@ -119,7 +119,7 @@ footer { height: 20%; }
   @extend .inner-shadow-top;
   height: 400px;
   width: 100%;
-  background-image:url('background.jpg');
+  background: image-url('background.jpg');
   margin-top: $margin;
 
   #circles {
@@ -128,7 +128,7 @@ footer { height: 20%; }
     height: 30px;
     display: inline-block;
     float: left;
-    background:url('circles.jpg');
+    background: image-url('circles.jpg');
   }
 
   #legend {
@@ -251,7 +251,7 @@ footer { height: 20%; }
 }
 
 /*
-  div 				{
+  div         {
     margin-left: 0 !important;
     margin-top: $margin;
 

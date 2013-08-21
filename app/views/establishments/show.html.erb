@@ -10,8 +10,8 @@
         <div id="bad" data-establishment-id="<%= @establishment.id %>"><%= @establishment.dislikes.size %></div>
       </div>
     </h3>
-    <%= form_for @order, url: dashboard_establishment_orders_path(establishment_id: params[:id]) do |f| %>
-      <%= f.submit t('.order_to'), class: 'button' %>
+    <%= form_for @order, url: establishment_orders_path(establishment_id: params[:id]) do |f| %>
+      <%= f.submit t('.order_to'), class: 'small_yellow_button' %>
     <% end %>
     <%= display_add @establishment %>
     <%= display_edit @establishment %>
@@ -24,7 +24,7 @@
   <div class="span4">
     <h4 class="content menu"<%= t('.menu') %></h4>
     <section id="foods">
-      <%= display_foods t('.food_empty'), { partial: 'dashboard/foods/food', collection: @foods } %>
+      <%= display_dishes t('.empty_dish'), { partial: 'dishes/dish', collection: @dishes } %>
     </section>
   </div>
   <div class="span7">
@@ -35,28 +35,29 @@
         <% end %>
       </div>
     </div>
-    <%= render partial: 'dashboard/images/form', locals: { object: @establishment } %>
+    <%= render partial: 'images/form', locals: { object: @establishment } %>
     <div id="map"></div>
     <h5>Comentarios:</h5>
     <div class="comments">
-      <%= render partial: 'dashboard/comment/comment', collection: @establishment.comments or 'Ningun comentario' %>
+      <%= render partial: 'comment/comment', collection: @establishment.comments or t'.empty_comments') %>
     </div>
-    <%= form_for @comment, url: dashboard_establishment_comment_path(establishment_id: @establishment.id) do |f| %>
+    <%= form_for @comment, url: establishment_comment_path(establishment_id: @establishment.id) do |f| %>
       <%= f.text_field :comment %>
-      <%= f.submit 'Commentar', class: 'button' %>
+      <%= f.submit t('.save'), class: 'small_yellow_button' %>
     <% end %>
   </div>
-</section>
+  </section>
+
 <script type="text/javascript">
 <% params = "#{@establishment.address.latitude}, #{@establishment.address.longitude}".html_safe %>
 document.addEventListener('page:change', function(){
   new App.Utilities.Map(<%= params %>);
-  new App.Utilities.Vote();
+  new App.Utilities.Rate();
 });
 
 $(function(){
   new App.Utilities.Map(<%= params %>);
-  new App.Utilities.Vote();
+  new App.Utilities.Rate();
 });
 </script>
 -->

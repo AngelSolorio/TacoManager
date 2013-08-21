@@ -10,5 +10,5 @@ class Establishment < ActiveRecord::Base
 
   validates_presence_of :address, :phone, :schedule, :user_id
 
-  accepts_nested_attributes_for :comments
+  #accepts_nested_attributes_for [:comments, :rates, :images]
 end

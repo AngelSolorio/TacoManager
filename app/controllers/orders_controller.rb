@@ -1,65 +1,52 @@
 class OrdersController < ApplicationController
   before_action :authenticate!
-#   before_filter :order_find_by_id, only: [:show, :update, :destroy]
-#   before_filter :check_info_establishment, only: :create
-#
-#   respond_to :js, only: :update
-#
-#   def show
-#     @establishment = Establishment.find_by_id(params[:establishment_id])
-#
-#     return redirect_to dashboard_establishments_path, alert: t('.not_found_establishment') unless @establishment
-#
-#     @foods = Food.where(establishment_id: @establishment.id)
-#     @order_details = OrderDetail.where(order_id: @order.id)
-#   end
-#
-#   def create
-#     @establishment = Establishment.find_by_id params[:establishment_id]
-#
-#     return redirect_to dashboard_establishments_path, alert: t('.not_found') unless @establishment
-#
-#     @order = Order.new
-#     @order.establishment = @establishment
-#     @order.user = current_identity.user
-#
-#     if @order.save
-#       return redirect_to dashboard_establishment_order_path(id: @order.id), notice: t('.created')
-#     end
-#
-#     redirect_to dashboard_establishment_order_path(id: @order.id), alert: t('.error')
-#   end
-#
-#   def update
-#     @order.user_id_payment = current_identity.user.id if params[:order][:payment]
-#
-#     @order.update_attributes params_order
-#
-#     respond_with @order
-#   end
-#
-#   def destroy
-#     deleted = @order.destroy if @order
-#     message = redirect_message @order, deleted, t('.deleted')
-#
-#     redirect_to dashboard_establishments_path, message
-#   end
-#
-#   private
-#
-#   def params_order
-#     params.require(:order).permit(:status, :payment)
-#   end
-#
-#   def order_find_by_id
-#     @order = Order.find_by_id params[:id]
-#
-#     return redirect_to dashboard_root_path, alert: t('.not_found_order') unless @order
-#   end
-#
-#   def check_info_establishment
-#     @establishment = Establishment.find_by_id params[:establishment_id]
-#
-#     return redirect_to dashboard_establishment_path(id: @establishment.id), alert: t('.info_invalid') unless @establishment.info_valid?
-#   end
+  before_filter :find_order_by_id, only: [:show, :update, :destroy]
+  before_filter :find_establishment, only: [:show, :create]
+
+  respond_to :js, only: :update
+
+  def show
+    return redirect_to establishments_path, alert: t('.establishment_not_found') unless @establishment
+
+    @dishes = @establishment.dishes
+  end
+
+  def create
+    return redirect_to establishments_path, alert: t('.invalid_establishment') unless @establishment
+
+    @order = Order.new
+    @order.establishment = @establishment
+    @order.user = current_user
+
+    if @order.save
+      return redirect_to establishment_order_path(id: @order), notice: t('.order_created')
+    end
+
+    redirect_to establishment_order_path(id: @order), alert: t('.errors_creating_order')
+  end
+
+  def update
+    @order.user_id_payment = current_user.id if params[:order][:payment]
+
+    @order.update_attributes params_order
+
+    respond_with @order
+  end
+
+  def destroy
+    deleted = @order.destroy if @order
+
+    redirect_to establishments_path, t('.order_deleted') if deleted
+  end
+
+  private
+
+  def params_order
+    params.require(:order).permit(:status, :payment)
+  end
+
+  def find_establishment
+    @establishment= Establishment.find_by_id params[:establishment_id]
+    return redirect_to establishment_path(@establishment), alert: t('.invalid_establishment') unless @establishment
+  end
 end

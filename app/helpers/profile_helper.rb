@@ -18,7 +18,7 @@ module ProfileHelper
         t('.empty-list-user-orders')
       end
     else
-      render partial: "table_orders", locals: {user: user}
+      render partial: "shared/table_orders", locals: {user: user}
     end
   end
 
@@ -28,7 +28,7 @@ module ProfileHelper
         t('.empty-list-user-establishments')
       end
     else
-      render partial: "table_establishments", locals: {user: user}
+      render partial: "shared/table_establishments", locals: {user: user}
     end
   end
 end

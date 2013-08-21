@@ -2,6 +2,11 @@ TacoManager::Application.routes.draw do
   root to: 'profile#show'
   resources :users
 
+  resources :establishments do
+    resources :comments
+    resources :rates
+  end
+
   match 'auth/:provider/callback' => 'sessions#create', via: [:get, :post]
   match 'signin' => 'sessions#new', via: [:get, :post], as: :signin
   get 'signup' => 'users#new', as: :signup

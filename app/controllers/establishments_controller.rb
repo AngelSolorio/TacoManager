@@ -18,9 +18,9 @@ class EstablishmentsController < ApplicationController
   def show
     return redirect_to establishments_path, alert: t('.establishment_not_found') unless @establishment
 
-    @order = Order.new
+    @order = @establishment.orders.build
     @dishes = Dish.where(establishment_id: params[:id])
-    @comment = Comment.new
+    @comment = @stablishment.comments.build
   end
 
   def create
@@ -52,6 +52,7 @@ class EstablishmentsController < ApplicationController
 
     if @establishment.destroy
     redirect_to  establishments_path(@establishment), deleted, t('.establishment_deleted')
+    end
   end
 
   private

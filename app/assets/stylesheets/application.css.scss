@@ -63,6 +63,16 @@ footer { height: 20%; }
     position: absolute;
   }
 
+  .menu-selected {
+    background: $marron;
+    a { color: $dark-yellow !important; }
+  }
+
+  .menu-unselected {
+    background: none;
+    a { color: $marron !important; }
+  }
+
   #menu {
     list-style-type: none;
     margin: ($margin * 2) $margin ($margin) ($margin * 2);
@@ -80,11 +90,6 @@ footer { height: 20%; }
       }
 
       &:last-child:after {content: '';}
-
-      &:hover {
-        background: $marron;
-        a { color: $dark-yellow; }
-      }
 
       a {
         color: $marron;

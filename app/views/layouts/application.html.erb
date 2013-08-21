@@ -38,4 +38,15 @@
       </div>
     </footer>
   </body>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#menu').on('click', 'li', function() {
+        $(this).siblings("li").removeClass("menu-selected")
+        $(this).siblings("li").addClass("menu-unselected")
+        $(this).removeClass('menu-unselected')
+        $(this).addClass("menu-selected")
+      });
+    });
+  </script>
 </html>

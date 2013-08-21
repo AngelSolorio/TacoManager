@@ -37,16 +37,8 @@ en:
       name: 'Name'
       email: 'Email'
       upload_picture: 'Upload picture'
-      orders-created: 'Orders Created'
-      created_at: 'Created at'
-      establishment: 'Establishment'
-      cost: 'Cost'
-      status: 'Status'
-      name: 'Name'
-      address: 'Adress'
-      phone: 'Phone'
-      time_to_arrive: 'Time to arrive'
       establishments-created: 'Establishments Created'
+      orders-created: 'Orders Created'
       empty-list-user-establishments: "You haven't created stablishments yet"
       empty-list-user-orders: "You have't created orders yet"
     form:
@@ -70,6 +62,21 @@ en:
     update:
       user_updated: 'User info updated'
       errors_updating: 'There were errors trying to updated user info'
+
+  establishments:
+    index:
+      establishments: 'Establishments'
+      new_establishment: 'New establishment'
+
+  table_headers:
+    created_at: 'Created at'
+    establishment: 'Establishment'
+    cost: 'Cost'
+    status: 'Status'
+    name: 'Name'
+    address: 'Adress'
+    phone: 'Phone'
+    time_to_arrive: 'Time to arrive'
 
   date:
     formats:

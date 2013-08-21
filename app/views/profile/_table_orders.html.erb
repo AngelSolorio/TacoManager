@@ -3,15 +3,15 @@
     <thead>
       <tr>
         <th style="width: 10px;">#</th>
-        <th style="width: 200px;"><%= t('.created_at') %></th>
-        <th style="width: 300px;"><%= t('.establishment') %></th>
-        <th style="width: 100px;"><%= t('.cost') %></th>
-        <th style="width: 150px;"><%= t('.time_to_arrive') %></th>
-        <th style="width: 100px;"><%= t('.status') %></th>
+        <th style="width: 200px;"><%= I18n.t :created_at, scope: [:table_headers] %></th>
+        <th style="width: 300px;"><%= I18n.t :establishment, scope: [:table_headers] %></th>
+        <th style="width: 100px;"><%= I18n.t :cost, scope: [:table_headers] %></th>
+        <th style="width: 150px;"><%= I18n.t :time_to_arrive, scope: [:table_headers] %></th>
+        <th style="width: 100px;"><%= I18n.t :status, scope: [:table_headers] %></th>
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "order", collection: user.orders, as: :order %>
+      <%= render partial: "shared/order", collection: user.orders, as: :order %>
     </tbody>
   </table>
 </div>

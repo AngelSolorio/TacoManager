@@ -6,6 +6,7 @@
 @import "sessions";
 @import "profile";
 @import "users";
+@import "establishments";
 @import "zocial";
 @import "highlight/default";
 
@@ -208,7 +209,9 @@ footer { height: 20%; }
 
 .small_yellow_button {
   @include awesome_button($dark-yellow, 4px, 5px 15px);
-  font-size: .8em;
+  font-family: 'Roboto';
+  font-size: .9em;
+  font-weight: 'bolder';
 }
 
 .small_red_button {

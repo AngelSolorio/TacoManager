@@ -9,13 +9,42 @@
 
   <section id="info-user-orders" class="section">
     <h1 class="title-section"><%= t('.orders-created') %></h1>
-    <%= display_user_orders(@user) %>
+    <div id="table-orders">
+      <table class="pure-table pure-table-striped">
+        <thead>
+          <tr>
+            <th style="width: 10px;">#</th>
+            <th style="width: 200px;"><%= I18n.t :created_at, scope: [:table_headers] %></th>
+            <th style="width: 300px;"><%= I18n.t :establishment, scope: [:table_headers] %></th>
+            <th style="width: 100px;"><%= I18n.t :cost, scope: [:table_headers] %></th>
+            <th style="width: 150px;"><%= I18n.t :time_to_arrive, scope: [:table_headers] %></th>
+            <th style="width: 100px;"><%= I18n.t :status, scope: [:table_headers] %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= display_user_orders(@user) %>
+        </tbody>
+      </table>
+    </div>
   </section>
   <div class="line" style="background-color: white; height: 1px; width: 1024px"></div>
 
   <section id="info-user-establishments">
     <h1 class="title-section"><%= t('.establishments-created') %></h1>
-    <%= display_user_establishments(@user) %>
+    <table class="pure-table pure-table-striped">
+      <thead>
+        <tr>
+          <th style="width: 10px;">#</th>
+          <th style="width: 200px;"><%= I18n.t :created_at, scope: [:table_headers] %></th>
+          <th style="width: 300px;"><%= I18n.t :name, scope: [:table_headers] %></th>
+          <th style="width: 300px;"><%= I18n.t :address, scope: [:table_headers] %></th>
+          <th style="width: 150px;"><%= I18n.t :phone, scope: [:table_headers] %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= display_user_establishments(@user) %>
+      </tbody>
+    </table>
   </section>
 </container>
 

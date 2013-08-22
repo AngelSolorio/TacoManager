@@ -67,6 +67,7 @@ en:
     index:
       establishments: 'Establishments'
       new_establishment: 'New establishment'
+      empty-list-establishments: 'Emtpy establishments list'
 
   table_headers:
     created_at: 'Created at'

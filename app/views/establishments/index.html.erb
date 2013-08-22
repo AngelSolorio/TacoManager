@@ -6,7 +6,6 @@
 <section id="establishments-index" class="section">
   <%= link_to t('.new_establishment'), new_establishment_path, id: "new_establishment_button", class: 'small_yellow_button' %>
   <h1 class="establishments-title-section"><%= t('.establishments') %></h1>
-
   <table class="pure-table pure-table-striped">
     <thead>
       <tr>
@@ -18,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "shared/establishment", collection: @establishments, as: :establishment %>
+      <%= display_establishments %>
     </tbody>
   </table>
 </section>

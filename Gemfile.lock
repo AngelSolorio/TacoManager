@@ -80,6 +80,9 @@ GEM
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -225,6 +228,7 @@ DEPENDENCIES
   geocoder
   gravatar_image_tag
   jquery-rails
+  kaminari
   mail
   minitest-capybara
   minitest-colorize

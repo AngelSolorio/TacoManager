@@ -19,6 +19,7 @@ gem 'gravatar_image_tag'
 gem 'geocoder'
 gem 'pretty_formatter'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'kaminari'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do

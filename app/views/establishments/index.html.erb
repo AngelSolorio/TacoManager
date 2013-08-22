@@ -17,9 +17,10 @@
       </tr>
     </thead>
     <tbody>
-      <%= display_establishments %>
+      <%= display_establishments @establishments %>
     </tbody>
   </table>
+  <%= paginate @establishments %>
 </section>
 
 <script type="text/javascript">

@@ -4,7 +4,7 @@ class EstablishmentsController < ApplicationController
   before_filter :my_establishment?, only: [:edit, :update, :destroy]
 
   def index
-    @establishments = Establishment.all
+    @establishments = Establishment.order("created_at").page(params[:page]).per(1)
   end
 
   def new
